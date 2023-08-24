@@ -92,7 +92,56 @@
 
     // <-------------------->
 
-    document.getElementById("totaltip").style.display = "none";
+// document.getElementById("totaltip").style.display = "none";
+// document.getElementById("each").style.display = "none";
+
+// const billAmountInput = document.getElementById('billamount');
+// const discountInput = document.getElementById('discount');
+// const numPeopleInput = document.getElementById('totalPeople');
+// const calculateButton = document.getElementById("calculate");
+// const eachElement = document.getElementById('each');
+// const totalTipElement = document.getElementById("totaltip");
+// const tipDisplayElement = document.getElementById("tip");
+
+// let discountValue = 0;
+
+// discountInput.addEventListener('input', function() {
+//     const inputValue = parseInt(discountInput.value);
+    
+//     if (inputValue > 99) {
+//         discountInput.value = 99;
+//         alert('Please enter a value from 0 to 99');
+//     }
+    
+//     discountValue = parseInt(discountInput.value);
+// });
+
+// calculateButton.onclick = function() {
+//     const billAmount = parseFloat(billAmountInput.value);
+//     const numPeople = parseInt(numPeopleInput.value);
+    
+//     if (billAmount === 0 || isNaN(discountValue)) {
+//         window.alert('Please fill in all details');
+//         return;
+//     }
+    
+//     if (numPeople < 1) {
+//         numPeopleInput.value = 1;
+//         eachElement.style.display = 'none';
+//     } else {
+//         eachElement.style.display = 'block';
+//     }
+    
+//     let totalTip = (billAmount * discountValue) / 100;
+//     let total = totalTip - billAmount;
+//     let result = total/numPeople;
+    
+//     totalTipElement.style.display = "block";
+//     tipDisplayElement.innerHTML = result.toFixed(2);
+// };
+
+    
+document.getElementById("totaltip").style.display = "none";
 document.getElementById("each").style.display = "none";
 
 const billAmountInput = document.getElementById('billamount');
@@ -133,11 +182,9 @@ calculateButton.onclick = function() {
     }
     
     let totalTip = (billAmount * discountValue) / 100;
-    totalTip = Math.round(totalTip * 100) / 100;
-    totalTip /= numPeople;
+    let totalAmount = billAmount - totalTip;
+    let result = totalAmount / numPeople;
     
     totalTipElement.style.display = "block";
-    tipDisplayElement.innerHTML = totalTip.toFixed(2);
+    tipDisplayElement.innerHTML = result.toFixed(2);
 };
-
-    
